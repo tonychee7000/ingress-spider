@@ -94,4 +94,12 @@ def analyze_html(html_content):
 
 
 if __name__ == '__main__':
-    print(find_code())
+    pn = find_code()
+    for p in pn:
+        print("Title: {0}".format(p['title']))
+        print("Date: {0}".format(time.strftime('%Y-%m-%d %H:%M:%S', p['time'])))
+        print("Found {0} code(s) in article:".format(len(p['codes'])))
+        for i in p['codes']:
+            print("\t* {0}".format(i))
+
+        print("\n================\n")
